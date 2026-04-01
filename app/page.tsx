@@ -7,7 +7,7 @@ import { About } from "@/components/about";
 
 export default function Home() {
     return (
-        <main className="max-w-4xl mx-auto w-full space-y-20">
+        <main className="max-w-4xl mx-auto w-full space-y-28">
                 <Hero />
                 <About />
                 <TechStack />
