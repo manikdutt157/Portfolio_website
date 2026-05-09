@@ -3,7 +3,6 @@ export interface contactType {
   linkedin_url: string;
   github_url: string;
   tryhackme_url: string;
-  hackthebox_url: string;
 }
 
 export const myContact: contactType = {
