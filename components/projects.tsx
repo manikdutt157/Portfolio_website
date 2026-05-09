@@ -101,7 +101,6 @@ export function Projects({
           </div>
         ) : null}
       </motion.div>
-      <Footer />
     </section>
   );
 }
