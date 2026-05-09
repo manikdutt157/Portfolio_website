@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { personalConfig } from "@/config/Personal";
+import { siteConfig } from "@/data/common";
 
 const LocalTime = () => {
   const [time, setTime] = useState("");
@@ -13,11 +13,11 @@ const LocalTime = () => {
       const options: Intl.DateTimeFormatOptions = {
         hour: "2-digit",
         minute: "2-digit",
-        timeZone: personalConfig.timezone,
+        timeZone: siteConfig.timezone,
       };
 
       const formattedTime = now.toLocaleTimeString("en-US", options);
-      const label = personalConfig.timezoneLabel ? `${personalConfig.timezoneLabel} ` : "";
+      const label = siteConfig.timezoneLabel ? `${siteConfig.timezoneLabel} ` : "";
       setTime(`${label}${formattedTime}`);
     };
 

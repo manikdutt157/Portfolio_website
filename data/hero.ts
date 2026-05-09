@@ -10,5 +10,5 @@ export const myHero: heroType = {
   desc: "Software Engineering Student. Passionate about creating, innovating, and solving challenges through code.",
   pic: "/img_new.jpg",
   resume:
-    "https://drive.google.com/file/d/1KB6xG94Xk18jSME19rY6gvJ4-etS4Dw_/view?usp=drive_link",
+    "https://drive.google.com/file/d/1HE-NS20geO7Cq89mZnW-qE-lx8x1jaeo/view?usp=sharing",
 };

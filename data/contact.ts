@@ -7,9 +7,8 @@ export interface contactType {
 }
 
 export const myContact: contactType = {
-  twitter_url: "https://twitter.com",
-  linkedin_url: "https://linkedin.com",
+  twitter_url: "https://x.com/genius_157",
+  linkedin_url: "https://www.linkedin.com/in/manik-chandra-dutt-92b9ab250/",
   github_url: "https://github.com/manikdutt157",
-  tryhackme_url: "https://tryhackme.com/",
-  hackthebox_url: "https://hackthebox.com/"
+  tryhackme_url: "https://tryhackme.com/p/genius157"
 };

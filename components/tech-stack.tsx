@@ -1,12 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { allSkills } from "@/data/skills";
+import { skills } from "@/data/common";
 import Image from "next/image";
 
 export function TechStack() {
   return (
-    <section className="max-w-4xl mx-auto w-full px-4 sm:px-6 lg:px-8 space-y-4 sm:space-y-5">
+    <section id="skills" className="max-w-4xl mx-auto w-full px-4 sm:px-6 lg:px-8 space-y-4 sm:space-y-5">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -18,11 +18,11 @@ export function TechStack() {
           Tech Stack
         </h2>
         <p className="text-xs sm:text-sm text-foreground/70 mb-4 sm:mb-8">
-          This list grows faster than my GitHub stars — and I kinda like that.
+          Power my curiosity and turn ideas into secure, working solutions.
         </p>
 
         <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-2 sm:gap-3 md:gap-4">
-          {allSkills.map((skill, itemIndex) => (
+          {skills.map((skill, itemIndex) => (
             <motion.div
               key={skill.title}
               initial={{ opacity: 0, scale: 0.8 }}

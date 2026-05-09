@@ -1,10 +1,23 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { Mail } from "lucide-react";
-import { RESUME_DATA } from "@/data/resume-data";
+import { siteProfile, socialLinks } from "@/data/common";
 
 export function Contact() {
+  const [isEmailVisible, setIsEmailVisible] = useState(false);
+
+  const handleEmailClick = () => {
+    if (!isEmailVisible) {
+      setIsEmailVisible(true);
+      return;
+    }
+
+    window.location.href = `mailto:${siteProfile.email}`;
+  };
+
   return (
     <section className="max-w-4xl mx-auto w-full px-4 sm:px-6 lg:px-8 mb-16 sm:mb-20">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 items-center">
@@ -23,28 +36,40 @@ export function Contact() {
           <div className="space-y-2">
             <h2 className="text-2xl sm:text-3xl font-bold">Let's Connect</h2>
             <p className="text-sm sm:text-base text-foreground/70">
-              Have a project in mind? Reach out and let's create something amazing together.
+              let's create something amazing together.
             </p>
           </div>
 
           <div className="space-y-4">
             {/* Email */}
-            <a
-              href={`mailto:${RESUME_DATA.contact.email}`}
-              className="flex items-center gap-3 p-3 sm:p-4 rounded-lg border border-foreground/20 hover:border-foreground/40 bg-foreground/5 hover:bg-foreground/10 transition-all"
+            <button
+              type="button"
+              onClick={handleEmailClick}
+              className="flex w-full items-center gap-3 rounded-lg border border-foreground/20 bg-foreground/5 p-3 text-left transition-all hover:border-foreground/40 hover:bg-foreground/10 sm:p-4"
+              aria-label={isEmailVisible ? "Open email app" : "Reveal email address"}
             >
               <Mail className="w-5 h-5 flex-shrink-0" />
               <div className="flex-1 min-w-0">
                 <p className="text-xs text-foreground/60 font-medium">Email</p>
-                <p className="text-sm sm:text-base truncate">{RESUME_DATA.contact.email}</p>
+                <motion.p
+                  initial={false}
+                  animate={{
+                    filter: isEmailVisible ? "blur(0px)" : "blur(5px)",
+                    opacity: isEmailVisible ? 1 : 0.72,
+                  }}
+                  transition={{ duration: 0.22, ease: "easeOut" }}
+                  className="select-none truncate text-sm sm:text-base"
+                >
+                  {siteProfile.email}
+                </motion.p>
               </div>
-            </a>
+            </button>
 
             {/* Social Links */}
             <div className="space-y-3 pt-4">
               <p className="text-xs text-foreground/60 font-medium">Follow</p>
               <div className="flex gap-3 flex-wrap">
-                {RESUME_DATA.contact.social.map((link) => {
+                {socialLinks.map((link) => {
                   const Icon = link.icon;
                   return (
                     <a

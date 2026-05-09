@@ -3,8 +3,6 @@ export interface SkillType {
   title: string;
 }
 
-export const mySkills = [{ id: "all", name: "All Skills" }];
-
 export const allSkills: SkillType[] = [
   // ================= FRONTEND =================
   {

@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FileText } from "lucide-react";
-import { RESUME_DATA } from "@/data/resume-data";
+import { siteProfile } from "@/data/common";
 
 export function About() {
   return (
@@ -19,7 +19,7 @@ export function About() {
       >
         <h2 className="text-xl sm:text-2xl md:text-3xl font-bold">About</h2>
         <p className="text-sm sm:text-base md:text-base text-foreground/70 leading-relaxed">
-          {RESUME_DATA.summary}
+          {siteProfile.summary}
         </p>
       </motion.div>
 
@@ -32,11 +32,13 @@ export function About() {
         <motion.a
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          href="#about"
+          href={siteProfile.resumeUrl || "#about"}
+          target={siteProfile.resumeUrl ? "_blank" : undefined}
+          rel={siteProfile.resumeUrl ? "noopener noreferrer" : undefined}
           className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-lg bg-foreground/5 hover:bg-foreground/10 transition-colors border border-foreground/10 text-xs sm:text-sm font-medium"
         >
           <FileText className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-          More About Me
+          Resume
         </motion.a>
       </motion.div>
     </section>

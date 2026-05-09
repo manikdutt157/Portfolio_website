@@ -11,7 +11,7 @@ export default function Home() {
                 <Hero />
                 <About />
                 <TechStack />
-                <Projects />
+                <Projects limit={2} showMoreButton />
                 <Contact />
                 <Footer />
         </main>
